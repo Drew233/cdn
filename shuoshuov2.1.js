@@ -9,13 +9,8 @@
             }
         );
     });
-    $(document).ready(function() {
-        $.getJSON("https://api.qqsuu.cn/api/visitor.php",
-            function(json) {
-                oss=json.system;
-            }
-        );
-    });
+    var info = new Browser();
+    oss=info.os;
     window.onload=function(){
         seecontent();
     }
@@ -104,14 +99,13 @@
         query.find().then(function (remarks) {
             remarks.forEach(function(atom){
                 var uncle=atom.attributes.content;
-                var posti=atom.attributes.postion;
                 var OS=atom.attributes.os;
                 var fake=atom.createdAt;
                 var d = new Date(fake);
                 const resDate = d.getFullYear() + '-' + this.p((d.getMonth() + 1)) + '-' + this.p(d.getDate())
                 const resTime = this.p(d.getHours()) + ':' + this.p(d.getMinutes()) + ':' + this.p(d.getSeconds())
                 var li=document.createElement('li');
-                var cc="<li><span class=\"shuoshuo_author_img\"><img src=\""+img+"\"class=\"avatar avatar-48\" width=\"48\" height=\"48\"></span><span class=\"cbp_tmlabel\" ><p></p><p>"+uncle+"</p><p></p><p class=\"shuoshuo_time\">"+"<span style=\"float:left;\"><i class=\"fas fa-user-edit\"></i>由   "+OS+"发表</span><span style=\"float:right;\"><i class=\"fa fa-clock-o\"></i>"+" "+ resDate+" "+resTime+"     "+"<i class=\"fas fa-map-marked-alt\"></i> "+posti+"</p></span></span></li>"
+                var cc="<li><span class=\"shuoshuo_author_img\"><img src=\""+img+"\"class=\"avatar avatar-48\" width=\"48\" height=\"48\"></span><span class=\"cbp_tmlabel\" ><p></p><p>"+uncle+"</p><p></p><p class=\"shuoshuo_time\">"+"<span style=\"float:left;\"><i class=\"fas fa-user-edit\"></i>由   "+OS+"发表</span><span style=\"float:right;\"><i class=\"fa fa-clock-o\"></i>"+" "+ resDate+" "+resTime+"     "+"</p></span></span></li>"
                 string+=cc;
             })
             string+='</ul>';
