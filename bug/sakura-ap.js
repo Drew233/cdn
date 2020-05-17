@@ -168,10 +168,10 @@ function imgError (ele, type) {
       break
     case 3:
 
-      ele.src = 'https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/image-404.png'
+      ele.src = 'https://cdn.jsdelivr.net/gh/drew233/imgcdn/1589720448723.webp'
       break
     default:
-      ele.src = 'https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/image-404.png'
+      ele.src = 'https://cdn.jsdelivr.net/gh/drew233/imgcdn/1589720448723.webp'
   }
 }
 mashiro_global.post_list_show_animation = new function () {
